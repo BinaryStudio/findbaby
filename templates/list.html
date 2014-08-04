@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title>firebase test</title>
+</head>
+<body>
+    <span data-id="1"></span>
+    <span data-id="2"></span>
+    <span data-id="3"></span>
+    <span data-id="4"></span>
+    <span data-id="5"></span>
+</body>
+<script src="https://cdn.firebase.com/js/client/1.0.18/firebase.js"></script>
+<script src="{{ url_for('static', filename='js/zepto.js') }}"></script>
+<script src="{{ url_for('static', filename='js/selector.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/firebase.js') }}"></script>
+<script>
+    firebase.bindElement($('span'));
+</script>
+</html>

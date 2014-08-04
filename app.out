@@ -1,0 +1,823 @@
+ * Running on http://localhost:5000/
+ * Restarting with reloader
+127.0.0.1 - - [03/Aug/2014 15:25:50] "GET /control/2 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:25:51] "GET /static/css/framework.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:25:51] "GET /static/css/colorbox.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:25:51] "GET /static/css/elements.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:25:51] "GET /static/css/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:25:51] "GET /static/css/responsive.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:25:51] "GET /static/css/hidpi.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:25:51] "GET /static/css/skin.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:25:51] "GET /static/css/custom.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:25:51] "GET /static/js/jquery.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:25:51] "GET /static/js/effects.jquery-ui.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:25:51] "GET /static/js/jquery.nivo-slider.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:25:51] "GET /static/js/jquery.colorbox.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:25:51] "GET /static/js/util.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:25:51] "GET /static/js/custom.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:25:51] "GET /static/js/jquery.easypiechart.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:25:51] "GET /static/js/control.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:25:51] "GET /static/img/common/mainMenuButtonBg.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:25:51] "GET /static/img/skins/default/headerFooterDecoBg.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:25:51] "GET /rest/parkings/2 HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 257, in error_router
+    return self.handle_error(e)
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 257, in error_router
+    return self.handle_error(e)
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 397, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/flask/views.py", line 84, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 487, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/yijingbai/Dropbox/project/hackathon/lib/resources/parking.py", line 50, in get
+    price = price_dao.find_by_parking_id(parking_id)
+  File "/Users/yijingbai/Dropbox/project/hackathon/lib/dao/price_dao.py", line 17, in find_by_parking_id
+    price = Price.query.filter_by(parking_id=parking_id).first()
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/query.py", line 2341, in first
+    ret = list(self[0:1])
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/query.py", line 2208, in __getitem__
+    return list(res)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/query.py", line 2412, in __iter__
+    return self._execute_and_instances(context)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/query.py", line 2427, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 729, in execute
+    return meth(self, multiparams, params)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/sql/elements.py", line 321, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 826, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 958, in _execute_context
+    context)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 1160, in _handle_dbapi_exception
+    exc_info
+  File "/Library/Python/2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 951, in _execute_context
+    context)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/default.py", line 436, in do_execute
+    cursor.execute(statement, parameters)
+OperationalError: (OperationalError) no such column: price.parking_id u'SELECT price.id AS price_id, price.parking_id AS price_parking_id, price.hour AS price_hour, price.day AS price_day \nFROM price \nWHERE price.parking_id = ?\n LIMIT ? OFFSET ?' (u'2', 1, 0)
+127.0.0.1 - - [03/Aug/2014 15:25:51] "GET /static/img/colorbox/loading.gif HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:25:51] "GET /control/images/common/favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [03/Aug/2014 15:28:50] "GET /control/2 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:28:50] "GET /static/css/framework.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:28:50] "GET /static/css/colorbox.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:28:50] "GET /static/css/elements.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:28:50] "GET /static/css/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:28:50] "GET /static/css/responsive.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:28:50] "GET /static/css/hidpi.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:28:50] "GET /static/css/skin.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:28:50] "GET /static/css/custom.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:28:50] "GET /static/js/jquery.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:28:50] "GET /static/js/effects.jquery-ui.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:28:50] "GET /static/js/jquery.nivo-slider.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:28:50] "GET /static/js/jquery.colorbox.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:28:50] "GET /static/js/util.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:28:50] "GET /static/js/custom.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:28:50] "GET /static/js/jquery.easypiechart.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:28:50] "GET /static/js/control.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:28:50] "GET /static/img/common/mainMenuButtonBg.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:28:50] "GET /static/img/skins/default/headerFooterDecoBg.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:28:50] "GET /rest/parkings/2 HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 257, in error_router
+    return self.handle_error(e)
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 257, in error_router
+    return self.handle_error(e)
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 397, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/flask/views.py", line 84, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 487, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/yijingbai/Dropbox/project/hackathon/lib/resources/parking.py", line 50, in get
+    price = price_dao.find_by_parking_id(parking_id)
+  File "/Users/yijingbai/Dropbox/project/hackathon/lib/dao/price_dao.py", line 17, in find_by_parking_id
+    price = Price.query.filter_by(parking_id=parking_id).first()
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/query.py", line 2341, in first
+    ret = list(self[0:1])
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/query.py", line 2208, in __getitem__
+    return list(res)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/query.py", line 2412, in __iter__
+    return self._execute_and_instances(context)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/query.py", line 2427, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 729, in execute
+    return meth(self, multiparams, params)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/sql/elements.py", line 321, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 826, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 958, in _execute_context
+    context)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 1160, in _handle_dbapi_exception
+    exc_info
+  File "/Library/Python/2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 951, in _execute_context
+    context)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/default.py", line 436, in do_execute
+    cursor.execute(statement, parameters)
+OperationalError: (OperationalError) no such column: price.parking_id u'SELECT price.id AS price_id, price.parking_id AS price_parking_id, price.hour AS price_hour, price.day AS price_day \nFROM price \nWHERE price.parking_id = ?\n LIMIT ? OFFSET ?' (u'2', 1, 0)
+127.0.0.1 - - [03/Aug/2014 15:28:50] "GET /static/img/colorbox/loading.gif HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:28:50] "GET /control/images/common/favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [03/Aug/2014 15:29:13] "GET /control/2 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:29:13] "GET /static/css/framework.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:29:13] "GET /static/css/colorbox.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:29:13] "GET /static/css/elements.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:29:13] "GET /static/css/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:29:13] "GET /static/css/responsive.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:29:13] "GET /static/css/hidpi.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:29:13] "GET /static/css/skin.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:29:13] "GET /static/css/custom.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:29:13] "GET /static/js/jquery.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:29:13] "GET /static/js/effects.jquery-ui.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:29:13] "GET /static/js/jquery.nivo-slider.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:29:13] "GET /static/js/jquery.colorbox.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:29:13] "GET /static/js/util.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:29:13] "GET /static/js/custom.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:29:13] "GET /static/js/jquery.easypiechart.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:29:13] "GET /static/js/control.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:29:13] "GET /static/img/common/mainMenuButtonBg.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:29:13] "GET /static/img/skins/default/headerFooterDecoBg.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:29:13] "GET /rest/parkings/2 HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 257, in error_router
+    return self.handle_error(e)
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 257, in error_router
+    return self.handle_error(e)
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 397, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/flask/views.py", line 84, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 487, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/yijingbai/Dropbox/project/hackathon/lib/resources/parking.py", line 50, in get
+    price = price_dao.find_by_parking_id(parking_id)
+  File "/Users/yijingbai/Dropbox/project/hackathon/lib/dao/price_dao.py", line 17, in find_by_parking_id
+    price = Price.query.filter_by(parking_id=parking_id).first()
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/query.py", line 2341, in first
+    ret = list(self[0:1])
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/query.py", line 2208, in __getitem__
+    return list(res)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/query.py", line 2412, in __iter__
+    return self._execute_and_instances(context)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/query.py", line 2427, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 729, in execute
+    return meth(self, multiparams, params)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/sql/elements.py", line 321, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 826, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 958, in _execute_context
+    context)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 1160, in _handle_dbapi_exception
+    exc_info
+  File "/Library/Python/2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 951, in _execute_context
+    context)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/default.py", line 436, in do_execute
+    cursor.execute(statement, parameters)
+OperationalError: (OperationalError) no such column: price.parking_id u'SELECT price.id AS price_id, price.parking_id AS price_parking_id, price.hour AS price_hour, price.day AS price_day \nFROM price \nWHERE price.parking_id = ?\n LIMIT ? OFFSET ?' (u'2', 1, 0)
+127.0.0.1 - - [03/Aug/2014 15:29:13] "GET /static/img/colorbox/loading.gif HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:29:13] "GET /control/images/common/favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [03/Aug/2014 15:29:21] "GET /static/js/jquery.min.map HTTP/1.1" 404 -
+127.0.0.1 - - [03/Aug/2014 15:29:59] "GET /control/2 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:29:59] "GET /static/css/framework.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:29:59] "GET /static/css/colorbox.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:29:59] "GET /static/css/elements.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:29:59] "GET /static/css/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:29:59] "GET /static/css/responsive.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:29:59] "GET /static/css/hidpi.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:29:59] "GET /static/css/skin.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:29:59] "GET /static/css/custom.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:30:00] "GET /static/js/jquery.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:30:00] "GET /static/js/effects.jquery-ui.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:30:00] "GET /static/js/jquery.nivo-slider.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:30:00] "GET /static/js/jquery.colorbox.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:30:00] "GET /static/js/util.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:30:00] "GET /static/js/custom.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:30:00] "GET /static/js/jquery.easypiechart.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:30:00] "GET /static/js/control.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:30:00] "GET /static/js/jquery.min.map HTTP/1.1" 404 -
+127.0.0.1 - - [03/Aug/2014 15:30:00] "GET /static/img/common/mainMenuButtonBg.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:30:00] "GET /static/img/skins/default/headerFooterDecoBg.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:30:00] "GET /rest/parkings/2 HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 257, in error_router
+    return self.handle_error(e)
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 257, in error_router
+    return self.handle_error(e)
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 397, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/flask/views.py", line 84, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 487, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/yijingbai/Dropbox/project/hackathon/lib/resources/parking.py", line 50, in get
+    price = price_dao.find_by_parking_id(parking_id)
+  File "/Users/yijingbai/Dropbox/project/hackathon/lib/dao/price_dao.py", line 17, in find_by_parking_id
+    price = Price.query.filter_by(parking_id=parking_id).first()
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/query.py", line 2341, in first
+    ret = list(self[0:1])
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/query.py", line 2208, in __getitem__
+    return list(res)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/query.py", line 2412, in __iter__
+    return self._execute_and_instances(context)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/query.py", line 2427, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 729, in execute
+    return meth(self, multiparams, params)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/sql/elements.py", line 321, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 826, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 958, in _execute_context
+    context)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 1160, in _handle_dbapi_exception
+    exc_info
+  File "/Library/Python/2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 951, in _execute_context
+    context)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/default.py", line 436, in do_execute
+    cursor.execute(statement, parameters)
+OperationalError: (OperationalError) no such column: price.parking_id u'SELECT price.id AS price_id, price.parking_id AS price_parking_id, price.hour AS price_hour, price.day AS price_day \nFROM price \nWHERE price.parking_id = ?\n LIMIT ? OFFSET ?' (u'2', 1, 0)
+127.0.0.1 - - [03/Aug/2014 15:30:00] "GET /static/img/colorbox/loading.gif HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:30:32] "GET /control/2 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:30:32] "GET /static/css/framework.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:30:32] "GET /static/css/colorbox.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:30:32] "GET /static/css/elements.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:30:32] "GET /static/css/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:30:32] "GET /static/css/responsive.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:30:32] "GET /static/css/hidpi.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:30:32] "GET /static/css/skin.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:30:32] "GET /static/css/custom.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:30:32] "GET /static/js/jquery.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:30:32] "GET /static/js/effects.jquery-ui.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:30:32] "GET /static/js/jquery.nivo-slider.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:30:32] "GET /static/js/jquery.colorbox.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:30:32] "GET /static/js/util.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:30:32] "GET /static/js/custom.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:30:32] "GET /static/js/jquery.easypiechart.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:30:32] "GET /static/js/control.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:30:32] "GET /static/js/jquery.min.map HTTP/1.1" 404 -
+127.0.0.1 - - [03/Aug/2014 15:30:32] "GET /static/img/common/mainMenuButtonBg.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:30:33] "GET /static/img/skins/default/headerFooterDecoBg.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:30:33] "GET /rest/parkings/2 HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 257, in error_router
+    return self.handle_error(e)
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 257, in error_router
+    return self.handle_error(e)
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 397, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/flask/views.py", line 84, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 487, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/yijingbai/Dropbox/project/hackathon/lib/resources/parking.py", line 50, in get
+    price = price_dao.find_by_parking_id(parking_id)
+  File "/Users/yijingbai/Dropbox/project/hackathon/lib/dao/price_dao.py", line 17, in find_by_parking_id
+    price = Price.query.filter_by(parking_id=parking_id).first()
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/query.py", line 2341, in first
+    ret = list(self[0:1])
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/query.py", line 2208, in __getitem__
+    return list(res)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/query.py", line 2412, in __iter__
+    return self._execute_and_instances(context)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/query.py", line 2427, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 729, in execute
+    return meth(self, multiparams, params)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/sql/elements.py", line 321, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 826, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 958, in _execute_context
+    context)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 1160, in _handle_dbapi_exception
+    exc_info
+  File "/Library/Python/2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 951, in _execute_context
+    context)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/default.py", line 436, in do_execute
+    cursor.execute(statement, parameters)
+OperationalError: (OperationalError) no such column: price.parking_id u'SELECT price.id AS price_id, price.parking_id AS price_parking_id, price.hour AS price_hour, price.day AS price_day \nFROM price \nWHERE price.parking_id = ?\n LIMIT ? OFFSET ?' (u'2', 1, 0)
+127.0.0.1 - - [03/Aug/2014 15:30:33] "GET /static/img/colorbox/loading.gif HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:30:35] "GET /control/2 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:30:35] "GET /static/css/framework.css HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:30:35] "GET /static/css/colorbox.css HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:30:35] "GET /static/css/elements.css HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:30:35] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:30:35] "GET /static/css/responsive.css HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:30:35] "GET /static/css/hidpi.css HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:30:35] "GET /static/css/skin.css HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:30:35] "GET /static/css/custom.css HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:30:35] "GET /static/js/jquery.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:30:36] "GET /static/js/effects.jquery-ui.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:30:36] "GET /static/js/jquery.nivo-slider.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:30:36] "GET /static/js/jquery.colorbox.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:30:36] "GET /static/js/util.js HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:30:36] "GET /static/js/custom.js HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:30:36] "GET /static/js/jquery.easypiechart.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:30:36] "GET /static/js/control.js HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:30:36] "GET /static/js/jquery.min.map HTTP/1.1" 404 -
+127.0.0.1 - - [03/Aug/2014 15:30:36] "GET /rest/parkings/2 HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 257, in error_router
+    return self.handle_error(e)
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 257, in error_router
+    return self.handle_error(e)
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 397, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/flask/views.py", line 84, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 487, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/yijingbai/Dropbox/project/hackathon/lib/resources/parking.py", line 50, in get
+    price = price_dao.find_by_parking_id(parking_id)
+  File "/Users/yijingbai/Dropbox/project/hackathon/lib/dao/price_dao.py", line 17, in find_by_parking_id
+    price = Price.query.filter_by(parking_id=parking_id).first()
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/query.py", line 2341, in first
+    ret = list(self[0:1])
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/query.py", line 2208, in __getitem__
+    return list(res)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/query.py", line 2412, in __iter__
+    return self._execute_and_instances(context)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/query.py", line 2427, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 729, in execute
+    return meth(self, multiparams, params)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/sql/elements.py", line 321, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 826, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 958, in _execute_context
+    context)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 1160, in _handle_dbapi_exception
+    exc_info
+  File "/Library/Python/2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 951, in _execute_context
+    context)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/default.py", line 436, in do_execute
+    cursor.execute(statement, parameters)
+OperationalError: (OperationalError) no such column: price.parking_id u'SELECT price.id AS price_id, price.parking_id AS price_parking_id, price.hour AS price_hour, price.day AS price_day \nFROM price \nWHERE price.parking_id = ?\n LIMIT ? OFFSET ?' (u'2', 1, 0)
+127.0.0.1 - - [03/Aug/2014 15:31:41] "GET /control/2 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:31:42] "GET /static/css/framework.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:31:42] "GET /static/css/colorbox.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:31:42] "GET /static/css/elements.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:31:42] "GET /static/css/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:31:42] "GET /static/css/responsive.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:31:42] "GET /static/css/hidpi.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:31:42] "GET /static/css/skin.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:31:42] "GET /static/css/custom.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:31:42] "GET /static/js/jquery.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:31:42] "GET /static/js/effects.jquery-ui.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:31:42] "GET /static/js/jquery.nivo-slider.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:31:42] "GET /static/js/jquery.colorbox.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:31:42] "GET /static/js/util.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:31:42] "GET /static/js/custom.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:31:42] "GET /static/js/jquery.easypiechart.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:31:42] "GET /static/js/control.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:31:42] "GET /static/js/jquery.min.map HTTP/1.1" 404 -
+127.0.0.1 - - [03/Aug/2014 15:31:42] "GET /static/img/common/mainMenuButtonBg.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:31:42] "GET /static/img/skins/default/headerFooterDecoBg.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:31:42] "GET /rest/parkings/2 HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 257, in error_router
+    return self.handle_error(e)
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 257, in error_router
+    return self.handle_error(e)
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 397, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/flask/views.py", line 84, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 487, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/yijingbai/Dropbox/project/hackathon/lib/resources/parking.py", line 50, in get
+    price = price_dao.find_by_parking_id(parking_id)
+  File "/Users/yijingbai/Dropbox/project/hackathon/lib/dao/price_dao.py", line 17, in find_by_parking_id
+    price = Price.query.filter_by(parking_id=parking_id).first()
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/query.py", line 2341, in first
+    ret = list(self[0:1])
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/query.py", line 2208, in __getitem__
+    return list(res)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/query.py", line 2412, in __iter__
+    return self._execute_and_instances(context)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/query.py", line 2427, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 729, in execute
+    return meth(self, multiparams, params)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/sql/elements.py", line 321, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 826, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 958, in _execute_context
+    context)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 1160, in _handle_dbapi_exception
+    exc_info
+  File "/Library/Python/2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 951, in _execute_context
+    context)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/default.py", line 436, in do_execute
+    cursor.execute(statement, parameters)
+OperationalError: (OperationalError) no such column: price.parking_id u'SELECT price.id AS price_id, price.parking_id AS price_parking_id, price.hour AS price_hour, price.day AS price_day \nFROM price \nWHERE price.parking_id = ?\n LIMIT ? OFFSET ?' (u'2', 1, 0)
+127.0.0.1 - - [03/Aug/2014 15:31:42] "GET /static/img/colorbox/loading.gif HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:32:04] "GET /control/2 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:32:04] "GET /static/css/framework.css HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:32:04] "GET /static/css/colorbox.css HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:32:04] "GET /static/css/elements.css HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:32:04] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:32:04] "GET /static/css/responsive.css HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:32:04] "GET /static/css/hidpi.css HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:32:04] "GET /static/css/skin.css HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:32:04] "GET /static/css/custom.css HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:32:04] "GET /static/js/jquery.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:32:04] "GET /static/js/effects.jquery-ui.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:32:04] "GET /static/js/jquery.nivo-slider.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:32:04] "GET /static/js/jquery.colorbox.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:32:04] "GET /static/js/util.js HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:32:04] "GET /static/js/custom.js HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:32:04] "GET /static/js/jquery.easypiechart.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:32:04] "GET /static/js/control.js HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:32:04] "GET /static/js/jquery.min.map HTTP/1.1" 404 -
+127.0.0.1 - - [03/Aug/2014 15:32:05] "GET /rest/parkings/2 HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 257, in error_router
+    return self.handle_error(e)
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 257, in error_router
+    return self.handle_error(e)
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 397, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/flask/views.py", line 84, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 487, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/yijingbai/Dropbox/project/hackathon/lib/resources/parking.py", line 50, in get
+    price = price_dao.find_by_parking_id(parking_id)
+  File "/Users/yijingbai/Dropbox/project/hackathon/lib/dao/price_dao.py", line 17, in find_by_parking_id
+    price = Price.query.filter_by(parking_id=parking_id).first()
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/query.py", line 2341, in first
+    ret = list(self[0:1])
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/query.py", line 2208, in __getitem__
+    return list(res)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/query.py", line 2412, in __iter__
+    return self._execute_and_instances(context)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/query.py", line 2427, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 729, in execute
+    return meth(self, multiparams, params)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/sql/elements.py", line 321, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 826, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 958, in _execute_context
+    context)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 1160, in _handle_dbapi_exception
+    exc_info
+  File "/Library/Python/2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 951, in _execute_context
+    context)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/default.py", line 436, in do_execute
+    cursor.execute(statement, parameters)
+OperationalError: (OperationalError) no such column: price.parking_id u'SELECT price.id AS price_id, price.parking_id AS price_parking_id, price.hour AS price_hour, price.day AS price_day \nFROM price \nWHERE price.parking_id = ?\n LIMIT ? OFFSET ?' (u'2', 1, 0)
+127.0.0.1 - - [03/Aug/2014 15:32:10] "GET /control/2 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:32:11] "GET /static/css/framework.css HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:32:11] "GET /static/css/colorbox.css HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:32:11] "GET /static/css/elements.css HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:32:11] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:32:11] "GET /static/css/responsive.css HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:32:11] "GET /static/css/hidpi.css HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:32:11] "GET /static/css/skin.css HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:32:11] "GET /static/css/custom.css HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:32:11] "GET /static/js/jquery.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:32:11] "GET /static/js/effects.jquery-ui.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:32:11] "GET /static/js/jquery.nivo-slider.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:32:11] "GET /static/js/jquery.colorbox.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:32:11] "GET /static/js/util.js HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:32:11] "GET /static/js/custom.js HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:32:11] "GET /static/js/jquery.easypiechart.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:32:11] "GET /static/js/control.js HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:32:11] "GET /static/js/jquery.min.map HTTP/1.1" 404 -
+127.0.0.1 - - [03/Aug/2014 15:32:11] "GET /rest/parkings/2 HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 257, in error_router
+    return self.handle_error(e)
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 257, in error_router
+    return self.handle_error(e)
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 397, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/flask/views.py", line 84, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 487, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/yijingbai/Dropbox/project/hackathon/lib/resources/parking.py", line 50, in get
+    price = price_dao.find_by_parking_id(parking_id)
+  File "/Users/yijingbai/Dropbox/project/hackathon/lib/dao/price_dao.py", line 17, in find_by_parking_id
+    price = Price.query.filter_by(parking_id=parking_id).first()
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/query.py", line 2341, in first
+    ret = list(self[0:1])
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/query.py", line 2208, in __getitem__
+    return list(res)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/query.py", line 2412, in __iter__
+    return self._execute_and_instances(context)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/query.py", line 2427, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 729, in execute
+    return meth(self, multiparams, params)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/sql/elements.py", line 321, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 826, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 958, in _execute_context
+    context)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 1160, in _handle_dbapi_exception
+    exc_info
+  File "/Library/Python/2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 951, in _execute_context
+    context)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/default.py", line 436, in do_execute
+    cursor.execute(statement, parameters)
+OperationalError: (OperationalError) no such column: price.parking_id u'SELECT price.id AS price_id, price.parking_id AS price_parking_id, price.hour AS price_hour, price.day AS price_day \nFROM price \nWHERE price.parking_id = ?\n LIMIT ? OFFSET ?' (u'2', 1, 0)
+127.0.0.1 - - [03/Aug/2014 15:32:38] "GET /register HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:32:39] "GET /static/css/framework.css HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:32:39] "GET /static/css/colorbox.css HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:32:39] "GET /static/css/elements.css HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:32:39] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:32:39] "GET /static/css/responsive.css HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:32:39] "GET /static/css/hidpi.css HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:32:39] "GET /static/css/skin.css HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:32:39] "GET /static/css/custom.css HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:32:39] "GET /static/js/jquery.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:32:39] "GET /static/js/effects.jquery-ui.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:32:39] "GET /static/js/jquery.nivo-slider.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:32:39] "GET /static/js/jquery.colorbox.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:32:39] "GET /static/js/util.js HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:32:39] "GET /static/js/custom.js HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:32:39] "GET /static/js/register.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:32:39] "GET /static/js/jquery.min.map HTTP/1.1" 404 -
+127.0.0.1 - - [03/Aug/2014 15:32:39] "GET /static/img/common/userFieldBg.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:32:39] "GET /static/img/common/addressFieldBg.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:32:39] "GET /static/img/common/phoneFieldBg.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:32:39] "GET /static/img/common/emailFieldBg.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:32:40] "GET /images/common/favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [03/Aug/2014 15:33:39] "GET /register HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:33:39] "GET /static/css/framework.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:33:39] "GET /static/css/colorbox.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:33:39] "GET /static/css/elements.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:33:39] "GET /static/css/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:33:39] "GET /static/css/responsive.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:33:39] "GET /static/css/hidpi.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:33:39] "GET /static/css/skin.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:33:39] "GET /static/css/custom.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:33:39] "GET /static/js/jquery.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:33:39] "GET /static/js/effects.jquery-ui.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:33:39] "GET /static/js/jquery.nivo-slider.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:33:39] "GET /static/js/jquery.colorbox.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:33:39] "GET /static/js/util.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:33:39] "GET /static/js/custom.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:33:39] "GET /static/js/register.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:33:39] "GET /static/js/jquery.min.map HTTP/1.1" 404 -
+127.0.0.1 - - [03/Aug/2014 15:33:40] "GET /static/img/common/mainMenuButtonBg.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:33:40] "GET /static/img/skins/default/headerFooterDecoBg.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:33:40] "GET /static/img/common/userFieldBg.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:33:40] "GET /static/img/common/addressFieldBg.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:33:40] "GET /static/img/common/phoneFieldBg.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:33:40] "GET /static/img/common/emailFieldBg.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:33:40] "GET /static/img/colorbox/loading.gif HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:33:56] "GET /register HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:33:56] "GET /static/css/framework.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:33:56] "GET /static/css/colorbox.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:33:56] "GET /static/css/elements.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:33:56] "GET /static/css/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:33:56] "GET /static/css/responsive.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:33:56] "GET /static/css/hidpi.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:33:56] "GET /static/css/skin.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:33:56] "GET /static/css/custom.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:33:56] "GET /static/js/jquery.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:33:57] "GET /static/js/effects.jquery-ui.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:33:57] "GET /static/js/jquery.nivo-slider.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:33:57] "GET /static/js/jquery.colorbox.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:33:57] "GET /static/js/util.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:33:57] "GET /static/js/custom.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:33:57] "GET /static/js/register.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:33:57] "GET /static/js/jquery.min.map HTTP/1.1" 404 -
+127.0.0.1 - - [03/Aug/2014 15:34:01] "GET /static/img/common/mainMenuButtonBg.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:34:01] "GET /static/img/skins/default/headerFooterDecoBg.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:34:01] "GET /static/img/common/userFieldBg.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:34:01] "GET /static/img/common/addressFieldBg.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:34:01] "GET /static/img/common/phoneFieldBg.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:34:01] "GET /static/img/common/emailFieldBg.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:34:01] "GET /static/img/colorbox/loading.gif HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:34:45] "GET /register HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:34:46] "GET /static/css/framework.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:34:46] "GET /static/css/colorbox.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:34:46] "GET /static/css/elements.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:34:46] "GET /static/css/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:34:47] "GET /static/css/responsive.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:34:47] "GET /static/css/hidpi.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:34:47] "GET /static/css/skin.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:34:47] "GET /static/css/custom.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:34:47] "GET /static/js/jquery.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:34:47] "GET /static/js/effects.jquery-ui.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:34:47] "GET /static/js/jquery.nivo-slider.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:34:48] "GET /static/js/jquery.colorbox.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:34:48] "GET /static/js/util.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:34:48] "GET /static/js/custom.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:34:48] "GET /static/js/register.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:34:48] "GET /static/js/jquery.min.map HTTP/1.1" 404 -
+127.0.0.1 - - [03/Aug/2014 15:34:48] "GET /static/img/common/mainMenuButtonBg.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:34:49] "GET /static/img/skins/default/headerFooterDecoBg.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:34:49] "GET /static/img/common/userFieldBg.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:34:49] "GET /static/img/common/addressFieldBg.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:34:49] "GET /static/img/common/phoneFieldBg.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:34:49] "GET /static/img/common/emailFieldBg.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:34:49] "GET /static/img/colorbox/loading.gif HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:35:34] "GET /register HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:35:35] "GET /static/css/framework.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:35:35] "GET /static/css/colorbox.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:35:35] "GET /static/css/elements.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:35:36] "GET /static/css/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:35:36] "GET /static/css/responsive.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:35:36] "GET /static/css/hidpi.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:35:36] "GET /static/css/skin.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:35:36] "GET /static/css/custom.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:35:36] "GET /static/js/jquery.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:35:36] "GET /static/js/effects.jquery-ui.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:35:36] "GET /static/js/jquery.nivo-slider.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:35:36] "GET /static/js/jquery.colorbox.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:35:37] "GET /static/js/util.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:35:37] "GET /static/js/custom.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:35:37] "GET /static/js/register.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:35:37] "GET /static/img/common/mainMenuButtonBg.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:35:38] "GET /static/img/skins/default/headerFooterDecoBg.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:35:38] "GET /static/img/common/userFieldBg.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:35:38] "GET /static/img/common/addressFieldBg.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:35:38] "GET /static/img/common/phoneFieldBg.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:35:38] "GET /static/img/common/emailFieldBg.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:35:38] "GET /static/img/colorbox/loading.gif HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:35:38] "GET /static/js/jquery.min.map HTTP/1.1" 404 -
+127.0.0.1 - - [03/Aug/2014 15:36:18] "GET /register HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:36:19] "GET /static/css/framework.css HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:36:19] "GET /static/css/colorbox.css HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:36:19] "GET /static/css/elements.css HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:36:19] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:36:19] "GET /static/css/responsive.css HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:36:20] "GET /static/css/hidpi.css HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:36:20] "GET /static/css/skin.css HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:36:20] "GET /static/css/custom.css HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:36:20] "GET /static/js/jquery.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:36:20] "GET /static/js/effects.jquery-ui.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:36:20] "GET /static/js/jquery.nivo-slider.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:36:20] "GET /static/js/jquery.colorbox.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:36:20] "GET /static/js/util.js HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:36:21] "GET /static/js/custom.js HTTP/1.1" 304 -
+127.0.0.1 - - [03/Aug/2014 15:36:21] "GET /static/js/register.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:36:21] "GET /static/js/jquery.min.map HTTP/1.1" 404 -
+127.0.0.1 - - [03/Aug/2014 15:36:49] "GET /register HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:36:49] "GET /static/css/framework.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:36:49] "GET /static/css/colorbox.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:36:49] "GET /static/css/elements.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:36:49] "GET /static/css/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:36:49] "GET /static/css/responsive.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:36:49] "GET /static/css/skin.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:36:49] "GET /static/css/hidpi.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:36:49] "GET /static/css/custom.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:36:49] "GET /static/js/jquery.nivo-slider.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:36:49] "GET /static/js/jquery.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:36:49] "GET /static/js/effects.jquery-ui.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:36:49] "GET /static/js/jquery.colorbox.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:36:49] "GET /static/js/custom.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:36:49] "GET /static/js/util.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:36:49] "GET /static/js/register.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:36:49] "GET /static/img/skins/default/headerFooterDecoBg.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:36:49] "GET /static/img/common/mainMenuButtonBg.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:36:49] "GET /static/img/common/userFieldBg.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:36:50] "GET /static/img/common/addressFieldBg.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:36:50] "GET /static/img/common/phoneFieldBg.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:36:50] "GET /static/img/common/emailFieldBg.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:36:51] "GET /images/common/favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [03/Aug/2014 15:36:51] "GET /static/img/colorbox/controlsBg.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:38:14] "GET /register HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:38:15] "GET /static/js/jquery.min.map HTTP/1.1" 404 -
+127.0.0.1 - - [03/Aug/2014 15:38:54] "GET /register?name=%E7%99%BD%E7%A5%8E%E4%BA%AC&address=%E5%8C%97%E4%BA%AC%E5%B8%82%E6%B5%B7%E6%B7%80%E5%8C%BA%E4%B8%8A%E5%9C%B0%E5%8D%81%E8%A1%9710%E5%8F%B7&total_pak=200&hour=12&day=213&info=15620545320&info=everatnight%40gmail.com HTTP/1.1" 200 -
+127.0.0.1 - - [03/Aug/2014 15:38:55] "GET /static/js/jquery.min.map HTTP/1.1" 404 -

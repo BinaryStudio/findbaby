@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Starter Template for Bootstrap</title>
+
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link href="{{ url_for('static', filename='css/index.css') }}">
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=18c62745627d83580552053f9d761591"></script>
+    <script src="https://cdn.firebase.com/js/client/1.0.18/firebase.js"></script>
+</head>
+
+<body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://v3.bootcss.com/examples/starter-template/#">抢车位</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="http://v3.bootcss.com/examples/starter-template/#">Home</a>
+                    </li>
+                    <li><a href="http://v3.bootcss.com/examples/starter-template/#about">About</a>
+                    </li>
+                    <li><a href="http://v3.bootcss.com/examples/starter-template/#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </div>
+
+    <div class="main">
+        <div id="map"></div>
+        <div class="list">
+            <div class="item">
+
+            </div>
+        </div>
+
+
+        <div class="map-info">
+            <h4 class="btitle">在您附近找到的停车场信息：</h4>
+            <table class="map-info-list" cellspacing="0" cellpadding="0">
+                <tbody>
+                    <tr>
+                        <td valign="top" width="30"><span class="map-info-index map-info-ico">A</span>
+                        </td>
+                        <td>
+                            <a href="#"
+                            data-app-url="" data-app-log="list">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tbody>
+                                        <tr>
+                                            <td><span class="map-info-name">西二旗-地铁站</span>
+                                                <span
+                                                class="map-info-distance">7km</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding:2px 0 0"></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding:2px 0 7px"><span class="map-info-address">途径地铁：地铁13号线、地铁昌平线</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding:2px 0 7px"><span class="map-info-address">收费价格：每小时2元</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+
+<td class="syinfo">
+<span class="sytitle">还剩余车位</span>
+<span class="synumber">40</span>
+<div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">120/200</div>
+</div>
+</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </a>
+                        </td>
+                        <td width="10" style="padding:0 6px">
+                            <a href="/from=0/bd_page_type=1/ssid=0/uid=0/pu=usm%400%2Csz%401320_1001%2Cta%40iphone_2_4.2_3_535/baiduid=3877FB0DA3C3D9D475F06DF6AEAE98F3/w=0_10_xierqi/t=iphone/l=1/tc?ref=www_iphone&amp;lid=12098626552814575507&amp;order=3&amp;vit=osres&amp;fm=almp_duopoi&amp;sto=c_duopoi_1_l3&amp;tj=map_3_0_10_l3&amp;waplogo=1&amp;sec=40439&amp;di=e1026bd91b37c7e5&amp;bdenc=1&amp;nsrc=IlPT2AEptyoA_yixCFOxXnANedT62v3IGxOF_yxZ_zqb95qshbWxBdlpYDbzNTrIBV0wxm3OcQoDljPuPiR-kQV2mu56gidwk7jb9b7wdhLqV1p0ag2i4dfGDX1AobihjfgidtQp1tI7B7FfzbTpgdwfaB3Jf22Ly1z8tSL6vPzxYpT-ZJfM6-m7TZ-WSGP9GO7-wB48eS6yVa"><span class="map-info-gomap  map-info-ico"></span>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+<script src="{{ url_for('static', filename='js/zepto.js') }}"></script>
+<script src="{{ url_for('static', filename='js/index.js') }}"></script>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>找车位</title>
+<!-- meta tags start -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="shopey, premium, mobile, template, HTML, CSS" />
+<meta name="Description" content="Premium mobile HTML/CSS template." />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<!-- meta tags end -->
+
+<!-- favorite icon starts -->
+<link rel="shortcut icon" href="images/common/favicon.ico" type="image/x-icon" />
+<!-- favorite icon ends -->
+
+
+<!-- CSS files start -->
+<link href="{{ url_for('static', filename='css/framework.css') }}" rel="stylesheet" type="text/css" media="all" />
+<link href="{{ url_for('static', filename='css/colorbox.css') }}" rel="stylesheet" type="text/css" media="all" />
+<link href="{{ url_for('static', filename='css/elements.css') }}" rel="stylesheet" type="text/css" media="all" />
+<link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css" media="all" />
+<link href="{{ url_for('static', filename='css/responsive.css') }}" rel="stylesheet" type="text/css" media="screen" />
+<link href="{{ url_for('static', filename='css/hidpi.css') }}" rel="stylesheet" type="text/css" media="screen" />
+<link href="{{ url_for('static', filename='css/skin.css') }}" rel="stylesheet" type="text/css" media="all" />
+<link href="{{ url_for('static', filename='css/custom.css') }}" rel="stylesheet" type="text/css" media="all" />
+<!-- CSS files end -->
+
+<!-- JavaScript files start -->
+
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/effects.jquery-ui.min.js') }}"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=18c62745627d83580552053f9d761591"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.nivo-slider.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.colorbox.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/util.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/custom.js') }}"></script>
+
+{% block inscript %}
+{% endblock %}
+
+<!-- JavaScript files end -->
+</head>
+<body> 
+<!-- website wrapper starts -->
+<div class="websiteWrapper"> 
+  <!-- page wrapper starts -->
+  <div class="pageWrapper registerPageWrapper"> 
+    <!-- main menu outer wrapper starts -->
+    <div class="mainMenuOuterWrapper"> 
+      <!-- main menu wrapper starts -->
+      <ul class="mainMenuWrapper">
+        <li><a href="singlePost.html">历史记录</a></li>
+        <li><a href="contact.html">停车统计</a></li>
+      </ul>
+      <!-- main menu wrapper ends -->
+      <div class="mainMenuBottomDecoration"></div>
+    </div>
+    <!-- main menu outer wrapper ends --> 
+
+    
+    <!-- header outer wrapper starts -->
+    <div class="headerOuterWrapper">
+      <div class="headerWrapper"> <a href="register.html" class="mainMenuButton"></a></div>
+      <div class="headerDecoration"></div>
+      
+    </div>
+    <!-- header outer wrapper ends --> 
+    {% block page_content %}
+    {% endblock %}
+    <!-- page content wrapper ends -->
+    
+    <div class="footerDecoration"></div>
+    <!-- footer wrapper starts -->
+    <div class="footerWrapper"> <span class="copyright">&copy; copyright BinaryStudio.</span> <span class="footerLinksWrapper"></span> </div>
+    <!-- footer wrapper ends --> 
+    
+  </div>
+  <!-- page wrapper ends --> 
+</div>
+<!-- website wrapper ends -->
+</body>
+</html>

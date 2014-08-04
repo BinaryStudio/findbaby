@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='plugin/blendui/res/crema.css') }}">
+        <script src="http://apps.bdimg.com/libs/zepto/1.1.3/zepto.min.js"></script>
+        <script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" src="http://apps.bdimg.com/blend/loader.js"></script>
+        <script type="text/javascript" src="http://api.map.baidu.com/api?type=quick&ak=18c62745627d83580552053f9d761591&v=1.0"></script>  
+        <script src="http://weinre123.duapp.com/target/target-script-min.js"></script>
+    </head>
+    <body>
+        <div id="test"></div>
+    </body>
+    <script>
+        Blend.lightInit({
+            ak:'xVNh2HVifZr3dI2p0mQmMb0h', //轻应用apikey
+            module:["activity","battery","connection","device","fs","globalization","geolocation","media","qr","account","pay","socialshare","blendui"]
+        });
+
+
+        document.addEventListener("blendready",function(){
+
+            var images = [{"url":"http://static.wenku.bdimg.com/topic/wapTopics/old_07_02.jpg"},
+              {"url":"http://static.wenku.bdimg.com/topic/wapTopics/old_09_02.jpg"},
+              {"url":"http://static.wenku.bdimg.com/topic/wapTopics/new_03_02.jpg"},
+              {"url":'http://static.wenku.bdimg.com/topic/wapTopics/jingpinshichang.jpg'}
+            ];
+            var slider;
+            slider = new Blend.ui.Slider({
+                        "id": "test",
+                        "bgColor": "#cccccc",
+                        "images": images,
+                        "width" : 100,
+                        "height" : 200
+                    });
+
+
+        });
+    </script>
+</html>

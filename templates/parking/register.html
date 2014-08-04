@@ -1,0 +1,61 @@
+{% extends "parking/base.html" %}
+{% block page_content %}
+  <div class="pageContentWrapper"> 
+      
+      <div class="headerBreak headerBreakTitleBottom"></div>
+      
+      <!-- page title starts -->
+      <h3 class="pageTitle">注册停车场</h3>
+      <!-- page title ends -->
+      
+      <div class="textBreakBoth"></div>
+      
+      <!-- register form wrapper starts -->
+      <div class="registerFormWrapper">
+        <form id="registerForm" class="registerForm">
+          <fieldset>
+            <div class="formFieldWrapper">
+              <label for="registerFirstNameField">名字:</label>
+              <input type="text" value="" name="name" id="registerFirstNameField" class="registerFirstNameField fieldWithIcon userFieldIcon" />
+            </div>
+            <div class="formFieldWrapper">
+              <label for="registerPasswordField">地址:</label>
+              <input type="text" value="" id="parkingaddress" class="registerAddressField fieldWithIcon addressFieldIcon" name="address" />
+            </div>
+            <div class="formFieldWrapper">
+              <label for="registerLastNameField">车位数目:</label>
+              <input type="text" value="" name="total_pak" id="registerLastNameField" class="registerLastNameField fieldWithIcon userFieldIcon" />
+            </div>
+            <div class="formFieldWrapper">
+              <label for="registerLastNameField">每小时价格:</label>
+              <input type="text" value="" name="hour" id="registerLastNameField" class="registerLastNameField fieldWithIcon userFieldIcon"/>
+            </div>
+            <div class="formFieldWrapper">
+              <label for="registerLastNameField">每天价格:</label>
+              <input type="text" value="" name="day" id="registerLastNameField" class="registerLastNameField fieldWithIcon userFieldIcon"/>
+            </div>
+            <div class="formFieldWrapper">
+              <label for="registerUserNameField">电话:</label>
+              <input type="text" value="" id="registerUserNameField" name="info" class="registerPhoneField fieldWithIcon phoneFieldIcon"/>
+            </div>
+            <div class="formFieldWrapper">
+              <label for="registerEmailField">Email:</label>
+              <input type="text" value="" id="registerEmailField" name="info" class="registerEmailField fieldWithIcon emailFieldIcon" />
+            </div>
+            <input type="">
+       
+            <div id="l-map"></div> 
+            <div class="registerButtonsWrapper"> <a href="login.html" class="registerLoginButton">登录</a>
+              <input type="submit" value="注册" class="registerButton" id="registerButton"/>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+      <!-- register form wrapper ends -->
+    </div>
+{% endblock %}
+{% block inscript %}
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=18c62745627d83580552053f9d761591"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/register.js') }}"></script>
+{% endblock %}
+
