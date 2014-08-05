@@ -9,10 +9,7 @@ class Person(db.Model):
     photo = db.Column(db.String(100))
     height = db.Column(db.Float)
     weight = db.Column(db.Float)
-
-
-    event_time = db.Column(db.DateTime)
-    event = db.Column(db.String(10))
+    desc = db.Column(db.Text)
 
     def __unicode__(self):
         return u"""
