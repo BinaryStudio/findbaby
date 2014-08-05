@@ -1,11 +1,29 @@
 from lib.utils.ext import db
 from datetime import datetime
 
-class Stat(db.Model):
+class Person(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    parking_id = db.Column(db.Integer)
+    name = db.Column(db.String(100))
+    age = db.Column(db.Integer)
+    sex = db.Column(db.String(10))
+    photo = db.Column(db.String(100))
+    height = db.Column(db.Float)
+    weight = db.Column(db.Float)
+
+
     event_time = db.Column(db.DateTime)
     event = db.Column(db.String(10))
+
+    def __unicode__(self):
+        return u"""
+        Person {}:
+            name: {}
+            age: {}
+            sex: {}
+            photo: {}
+            height: {}
+            weight: {}
+        """.format(self.id, self.age)
 
     def __init__(self, parking_id, event):
         self.parking_id = parking_id
