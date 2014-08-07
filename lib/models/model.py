@@ -33,6 +33,13 @@ class Person(db.Model):
                                    time_tuple[4],
                                    0)
 
+
+class clue(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(500))
+    content = db.Column(db.Text)
+
+
 class Price(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     parking_id = db.Column(db.Integer)
