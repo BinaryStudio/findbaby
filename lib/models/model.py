@@ -38,6 +38,12 @@ class clue(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(500))
     content = db.Column(db.Text)
+    def __repr__(self):
+    return u"""
+    Clue {}:
+        title: {}
+        content: {}
+    """.format(self.id, self.title, self.content)
 
 
 class findrequest(db.Model):
