@@ -11,7 +11,7 @@ class Person(db.Model):
     weight = db.Column(db.Float)
     desc = db.Column(db.Text)
 
-    def __unicode__(self):
+    def __repr__(self):
         return u"""
         Person {}:
             name: {}
@@ -38,6 +38,13 @@ class clue(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(500))
     content = db.Column(db.Text)
+
+
+class findrequest(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(500))
+    content = db.Column(db.Text)
+    validTime = db.Column(db.DateTime)
 
 
 class Price(db.Model):
