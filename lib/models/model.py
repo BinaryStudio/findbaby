@@ -39,11 +39,11 @@ class clue(db.Model):
     title = db.Column(db.String(500))
     content = db.Column(db.Text)
     def __repr__(self):
-    return u"""
-    Clue {}:
-        title: {}
-        content: {}
-    """.format(self.id, self.title, self.content)
+        return u"""
+        Clue {}:
+            title: {}
+            content: {}
+        """.format(self.id, self.title, self.content)
 
 
 class findrequest(db.Model):
@@ -51,6 +51,12 @@ class findrequest(db.Model):
     title = db.Column(db.String(500))
     content = db.Column(db.Text)
     validTime = db.Column(db.DateTime)
+    def __repr__(self):
+        return u"""
+            request {}:
+                title: {}
+                content: {}
+        """.format(self.id, self.title, self.content)
 
 
 class Price(db.Model):
