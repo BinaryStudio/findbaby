@@ -58,6 +58,11 @@ class findrequest(db.Model):
                 content: {}
         """.format(self.id, self.title, self.content)
 
+    def __init__(self, title, content, validTime):
+        self.title = title
+        self.content = content
+        self.validTime = validTime
+
 
 class Price(db.Model):
     id = db.Column(db.Integer, primary_key=True)
