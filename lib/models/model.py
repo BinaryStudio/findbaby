@@ -45,6 +45,10 @@ class clue(db.Model):
             content: {}
         """.format(self.id, self.title, self.content)
 
+    def __init__(self, title, content):
+        self.title = title
+        self.content = content
+
 
 class findrequest(db.Model):
     id = db.Column(db.Integer, primary_key=True)
