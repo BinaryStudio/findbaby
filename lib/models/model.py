@@ -54,6 +54,7 @@ class findrequest(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(500))
     content = db.Column(db.Text)
+    phonenumber = db.Column(db.String(15))
     validTime = db.Column(db.DateTime)
     def __repr__(self):
         return u"""
