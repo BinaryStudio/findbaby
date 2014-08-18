@@ -7,3 +7,8 @@ class PersonDao(object):
 
     def createPerson(person):
     	pass
+
+    def deletePerson(person):
+    	pass
+
+    
