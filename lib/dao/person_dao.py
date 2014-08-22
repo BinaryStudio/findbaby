@@ -11,6 +11,7 @@ class PersonDao(object):
     def deletePerson(person):
     	pass
 
-    def updatePersonInfo(person):
-    	pass
+    def modifyPerson(person):
+        pass
+
     
