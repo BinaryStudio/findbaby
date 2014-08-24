@@ -14,4 +14,6 @@ class PersonDao(object):
     def modifyPerson(person):
         pass
 
-    
+
+    def foundPersion(self):
+    	pass
