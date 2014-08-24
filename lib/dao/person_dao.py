@@ -11,9 +11,8 @@ class PersonDao(object):
     def deletePerson(person):
     	pass
 
-    def modifyPerson(person):
+    def modifyPerson(self):
         pass
-
 
     def foundPersion(self):
     	pass
