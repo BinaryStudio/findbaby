@@ -5,10 +5,10 @@ class PersonDao(object):
     def __init__(self):
         pass
 
-    def createPerson(person):
+    def createPerson(self):
     	pass
 
-    def deletePerson(person):
+    def deletePerson(self):
     	pass
 
     def modifyPerson(self):
